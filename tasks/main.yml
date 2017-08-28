@@ -1,0 +1,6 @@
+---
+- include: 01_apt.yml
+  tags: apache2_hardening_apt
+
+- include: 02_conf.yml
+  tags: apache2_hardening_conf

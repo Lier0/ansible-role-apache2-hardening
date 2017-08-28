@@ -1,0 +1,23 @@
+---
+- name: Config should not be worldwide read- or writeable | DTAG SEC Req 3.36-3
+  file:
+    path: "/etc/apache2"
+    recurse: yes
+    mode: "o-rwx"
+    owner: "{{apache2_user}}"
+    group: "{{apache2_group}}"
+
+- name: Harden apache2
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{apache2_user}}"
+    group: "{{apache2_group}}"
+    mode: 0640
+    backup: yes
+  notify: Reload apache2
+  with_items:
+    - src: "etc/apache2/apache2.conf.j2"
+      dest: "/etc/apache2/apache2.conf"
+    - src: "etc/apache2/conf-available/security.conf.j2"
+      dest: "/etc/apache2/conf-available/security.conf"

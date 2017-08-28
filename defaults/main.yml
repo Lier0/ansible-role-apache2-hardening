@@ -1,0 +1,19 @@
+---
+apache2_user: "www-data"
+apache2_group: "www-data"
+
+# security.conf
+apache2_server_tokens: 'Prod'
+apache2_server_signature: 'Off'
+apache2_trace_enable: 'Off'
+
+# apache2.conf
+apache2_timeout: 120
+apache2_keepalive: 'Off'
+apache2_max_keepalive_requests: 100
+apache2_keepalive_timeout: 5
+apache2_log_level: warn
+apache2_sendfile: 'On'
+
+#apache2_allowed_http_methods: "GET POST"
+#apache2_modules_to_disable: "cgi cgid"

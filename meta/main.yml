@@ -1,0 +1,17 @@
+---
+dependencies: []
+galaxy_info:
+  author: Lier0
+  description: Debian - Apache2 security enhancment
+  license: GPLv3
+  min_ansible_version: 2.0
+  platforms:
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+        - stretch
+  galaxy_tags:
+    - debian
+    - apache2
+    - system
