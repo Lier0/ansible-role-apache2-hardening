@@ -4,8 +4,6 @@
     path: "/etc/apache2"
     recurse: yes
     mode: "o-rwx"
-    owner: "{{apache2_user}}"
-    group: "{{apache2_group}}"
 
 - name: Harden apache2
   template:
